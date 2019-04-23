@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Conflux共识机制介绍">
+      <meta property="og:title" content="基于HTTPS的DNS">
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>Conflux共识机制介绍 - Jin&#39;s Blog</title>
+  <title>基于HTTPS的DNS - Jin&#39;s Blog</title>
 
 
   <link rel="shortcut icon" href="/images/favicon-96x96.png">
@@ -110,17 +110,17 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Conflux共识机制介绍
+            基于HTTPS的DNS
             
           </h1>
           <p class="posted-on">
-          2019-04-22
+          2019-04-23
           </p>
           <div class="tags-links">
             
               
-                <a href="/tags/Conflux/" rel="tag">
-                  Conflux
+                <a href="/tags/HTTPS DNS/" rel="tag">
+                  HTTPS DNS
                 </a>
               
             
@@ -128,14 +128,17 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <p>Conflux共识机制的吞吐量能达到5.78GB/s，确认时间4.5-7.4分钟，交易速度6000TPS。Conflux共识机制的交易速度是GHOST或者Bitcoin的11.62倍，Algorand的3.84倍。</p>
+          <p>Mozilla和Cloudflare合作提供的一项新的 IETF 标准方案可信递归解析器，一种新的解决 DNS 安全的方案</p>
 <a id="more"></a>
+<p>最近用了下Firefox浏览器的这个功能，感觉还蛮强大的。同时也发现个诡异的问题，使用VPN的时候只有开启这个功能的时候才可以访问google。</p>
+<h2 id="什么是-HTTP？"><a href="#什么是-HTTP？" class="headerlink" title="什么是 HTTP？"></a>什么是 HTTP？</h2><p>当我们解释浏览器如何下载网页时，通常会这样解释：浏览器向服务器发出 GET 请求。服务器发送一个响应，该响应是一个包含 HTML 的文件。这个系统被称为 HTTP。<br><img src="/img/2019/dnshttps1.jpeg" alt="dns"></p>
+<h2 id="什么是-DNS？"><a href="#什么是-DNS？" class="headerlink" title="什么是 DNS？"></a>什么是 DNS？</h2><p>域名系统（DNS）就是将站点名称转换为 IP 地址的系统，而将域名转换为 IP 地址的过程，称为域名解析。<br><img src="/img/2019/dnshttps2.jpeg" alt="dns"></p>
+<h2 id="DNS-如何被利用？"><a href="#DNS-如何被利用？" class="headerlink" title="DNS 如何被利用？"></a>DNS 如何被利用？</h2><p>通常解析器会告诉每个 DNS 服务器你正在寻找哪个域名。 该请求有时会包含你的完整 IP 地址。 或者，如果不是完整的 IP 地址，请求中通常会包含你的大部分 IP 地址，这些 IP 地址可以轻松地与其他信息结合起来以找出你的身份。这意味着进行域名解析的每台服务器都会查看你要查找的网站。 但更重要的是，这也意味着通往这些服务器的任何人都可以看到你的请求。这个系统有几种方式会使用户的数据处于危险之中。 两大主要的风险是跟踪和欺骗攻击。</p>
 <ul>
-<li><a href="https://www.jianshu.com/p/1952217010d1" target="_blank" rel="noopener">本文引用原始地址</a></li>
+<li><h3 id="跟踪"><a href="#跟踪" class="headerlink" title="跟踪"></a>跟踪</h3><img src="/img/2019/dnshttps3.jpeg" alt="dns"></li>
+<li><h3 id="欺骗"><a href="#欺骗" class="headerlink" title="欺骗"></a>欺骗</h3><img src="/img/2019/dnshttps4.jpeg" alt="dns"></li>
 </ul>
-<h2 id="Conflux框架"><a href="#Conflux框架" class="headerlink" title="Conflux框架"></a>Conflux框架</h2><p>Conflux共识机制是在比特币源代码基础上实现的。Conflux的框架和比特币的矿机类似：GossipNetwork实现P2P网络交互，节点维护TxPool，生成区块（Block Generator），以及维护区块状态。Conflux框架如下图：<br><img src="/img/2019/conflux1.jpg" alt="conflux"><br>框架图中的虚线部分是一个节点上的细节。比特币的区块链是一条链，也就是说，每个区块只有一个父区块。和比特币不同，Conflux的区块链是由“DAG State”实现，每个区块除了一个“父区块”外，可能还有多个“引用区块”。</p>
-<h2 id="区块DAG"><a href="#区块DAG" class="headerlink" title="区块DAG"></a>区块DAG</h2><p>Conflux中的区块之间由多条边（Edge，连接）组成，这些边分成两类：父连接，以及引用连接。在确定主链（Pivot）的基础上，新生成的区块必须使用父连接连接到主链的最后一个区块上。除了主链外，还存在其他一些非主链的路径，新生成的区块必须使用“引用连接”连接这些非主链的最后一个区块。也就是说，Conflux中的区块之间的连接关系组成DAG（有向无环图）。Conflux中组成DAG的区块会确定一条主链（Pivot Chain）。在主链确定的基础上再确定所有区块的先后顺序。区块DAG的示意图如下：<br><img src="/img/2019/conflux2.jpg" alt="conflux"><br>Genesis是“创世纪”块，也就是第一个块。父连接用“实心”箭头表示，引用连接用“虚线”箭头表示。区块C使用“父连接”连接到A，使用“引用连接”连接到B。新生成的区块（New Block）使用“父连接”连接到H，使用“引用连接”连接到K。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Conflux共识机制，借鉴了2015年论文中的GHOST规则，使用DAG数据结构组织区块。论文逻辑清晰，比较容易阅读。Conflux共识机制，在DAG区块中，先使用GHOST规则确定主链，再确定区块顺序，交易顺序。发生冲突的交易，只保留第一个交易，其他冲突交易作废。论文论证了Conflux共识机制，保证了区块的安全性和可靠性，又能极大地提升交易吞吐量。实验数据表明：Conflux共识机制的吞吐量能达到5.78GB/s，确认时间4.5-7.4分钟，交易速度6000TPS。</p>
+<p>Cloudflare与Mozilla致力于构建隐私优先的 DNS 服务。合作建立了一个 DoH 解决方案服务。</p>
 
         </div>
       </article>
@@ -154,13 +157,9 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/2019/04/23/dns-over-https/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
-        </div>
-      
       
         <div class="nav-next">
-          <a href="/2019/01/02/xdag/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/2019/04/22/conflux/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
