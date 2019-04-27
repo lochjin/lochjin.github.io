@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Jin&#39;s Blog">
+      <meta property="og:title" content="Memory-hard puzzles">
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Jin&#39;s Blog">
   <!--Type page-->
   
-      <meta property="og:type" content="website">
+      <meta property="og:type" content="article">
   
   <!--Page Cover-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>Archives - Jin&#39;s Blog</title>
+  <title>Memory-hard puzzles - Jin&#39;s Blog</title>
 
 
   <link rel="shortcut icon" href="/images/favicon-96x96.png">
@@ -102,104 +102,67 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">Archives</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2019</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Memory-hard puzzles
             
-  <li>
-    <span class="date">
-      2019-04-27
-    </span>
-    <a href="/2019/04/27/memeory-hard-puzzles/" class="title">
-      Memory-hard puzzles
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-26
-    </span>
-    <a href="/2019/04/26/polkadot/" class="title">
-      Polkadot
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-23
-    </span>
-    <a href="/2019/04/23/dns-over-https/" class="title">
-      基于HTTPS的DNS
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-22
-    </span>
-    <a href="/2019/04/22/conflux/" class="title">
-      Conflux共识机制介绍
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-01-02
-    </span>
-    <a href="/2019/01/02/xdag/" class="title">
-      XDAG:A new DAG-based cryptocurrency
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2018</h2>
-          <ul class="list">
+          </h1>
+          <p class="posted-on">
+          2019-04-27
+          </p>
+          <div class="tags-links">
             
-  <li>
-    <span class="date">
-      2018-01-24
-    </span>
-    <a href="/2018/01/24/NP/" class="title">
-      关于算法中的NP问题
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2009</h2>
-          <ul class="list">
+              
+                <a href="/tags/Memory-hard puzzles ASIC/" rel="tag">
+                  Memory-hard puzzles ASIC
+                </a>
+              
             
-  <li>
-    <span class="date">
-      2009-02-11
-    </span>
-    <a href="/2009/02/11/WeaponTrail/" class="title">
-      Ogre WeaponTrail
-    </a>
-  </li>
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <p>刚性内存解谜（Memory-hard puzzles）需要大量的内存计算，而不是靠大量的CPU时间</p>
+<a id="more"></a>
+<ul>
+<li>大多数被设计成反ASIC的解谜程序中，最普遍被应用的叫做刚性内存解谜（Memory-hard puzzles）。一个相似但又不一样的概念是内存限制解谜（memeory-bound puzzles），花在读取内存上的时间，占据了这种程序大部分的计算时间。</li>
+<li>一个解谜可以是刚性内存类而不是内存限制类，或是内存限制类而不是刚性内存类，或是二者兼而有之。一个微妙但重要的区别在于，虽然CPU的速度是计算时间的瓶颈，但平行运算大量解谜的成本，还是被内存的成本所左右，或者反之亦然。</li>
+<li>通常对于运算类的解谜程序，要做到刚性内存和内存限制，就需要保证在运算过程中大量的内存被要求使用，使之成为一个限制性因素。</li>
+</ul>
+<h3 id="为什么刚性内存解谜或内存限制解谜可以反ASIC"><a href="#为什么刚性内存解谜或内存限制解谜可以反ASIC" class="headerlink" title="为什么刚性内存解谜或内存限制解谜可以反ASIC?"></a>为什么刚性内存解谜或内存限制解谜可以反ASIC?</h3><ul>
+<li>因为用来计算哈希函数的逻辑运算只占了CPU里的一小部分，意思是在比特币的解谜计算里，ASIC不需要执行一些不必要的功能，而只需要执行计算哈希函数的相关功能，所以占了很大的优势。另外一个相关的元素是，不同的内存性能上的差异（和单位性能的成本）比不同处理器之间运算速度上的差异要小很多，所以如果设计一个刚性内存类解谜，计算时需要相当简单的算力但需要大量的内存，这就意味着，解谜成本的上升速率将会像内存成本提升速率那样，在一个相对低一些的水平。</li>
+</ul>
 
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2019/04/26/polkadot/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
   </div>
 </div>
 
