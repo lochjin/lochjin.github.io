@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Memory-hard puzzles">
+      <meta property="og:title" content="Prisoner&#39;s Dilemma">
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>Memory-hard puzzles - Jin&#39;s Blog</title>
+  <title>Prisoner&#39;s Dilemma - Jin&#39;s Blog</title>
 
 
   <link rel="shortcut icon" href="/images/favicon-96x96.png">
@@ -110,17 +110,17 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Memory-hard puzzles
+            Prisoner's Dilemma
             
           </h1>
           <p class="posted-on">
-          2019-04-27
+          2019-05-02
           </p>
           <div class="tags-links">
             
               
-                <a href="/tags/Memory-hard puzzles ASIC/" rel="tag">
-                  Memory-hard puzzles ASIC
+                <a href="/tags/Prisoner&#39;s Dilemma 囚徒困境/" rel="tag">
+                  Prisoner's Dilemma 囚徒困境
                 </a>
               
             
@@ -128,15 +128,22 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <p>刚性内存解谜（Memory-hard puzzles）需要大量的内存计算，而不是靠大量的CPU时间</p>
-<a id="more"></a>
+          <p>囚徒困境是博弈论的非零和博弈中具代表性的例子，反映个人最佳选择并非团体最佳选择。<br><a id="more"></a><br>所以说在一个群体中，个人做出理性选择却往往导致集体的非理性。虽然困境本身只属模型性质，但现实中的价格竞争、环境保护等方面，也会频繁出现类似情况.</p>
+<h3 id="囚徒困境的例子"><a href="#囚徒困境的例子" class="headerlink" title="囚徒困境的例子"></a>囚徒困境的例子</h3><p>两个囚徒被抓了，警察为了让他们坦白交代，分别提审两个人，这里分三种情况</p>
+<ol>
+<li>两个人都不交代，没有证据，获刑1年</li>
+<li>其中一个人交代了，一个人没交代，交代了的因为戴罪立功释放，没交代的判10年</li>
+<li>两个人都交代，每个人判5年<br><img src="/img/2019/pd1.jpg" alt="Prisoner&#39;s Dilemma"><br>两个人没有串供的机会，所以只能自行判断，假设每个人交代和不交代都占50%，则</li>
+</ol>
 <ul>
-<li>大多数被设计成反ASIC的解谜程序中，最普遍被应用的叫做刚性内存解谜（Memory-hard puzzles）。一个相似但又不一样的概念是内存限制解谜（memeory-bound puzzles），花在读取内存上的时间，占据了这种程序大部分的计算时间。</li>
-<li>一个解谜可以是刚性内存类而不是内存限制类，或是内存限制类而不是刚性内存类，或是二者兼而有之。一个微妙但重要的区别在于，虽然CPU的速度是计算时间的瓶颈，但平行运算大量解谜的成本，还是被内存的成本所左右，或者反之亦然。</li>
-<li>通常对于运算类的解谜程序，要做到刚性内存和内存限制，就需要保证在运算过程中大量的内存被要求使用，使之成为一个限制性因素。</li>
+<li>第一个人没说的时候判刑的危险（后果<em>概率）50%</em>1+50%*10=5.5</li>
+<li>第一个人交代了的时候判刑的危险（后果<em>概率）50%</em>0+50%*5=2.5</li>
 </ul>
-<h3 id="为什么刚性内存解谜或内存限制解谜可以反ASIC"><a href="#为什么刚性内存解谜或内存限制解谜可以反ASIC" class="headerlink" title="为什么刚性内存解谜或内存限制解谜可以反ASIC?"></a>为什么刚性内存解谜或内存限制解谜可以反ASIC?</h3><ul>
-<li>因为用来计算哈希函数的逻辑运算只占了CPU里的一小部分，意思是在比特币的解谜计算里，ASIC不需要执行一些不必要的功能，而只需要执行计算哈希函数的相关功能，所以占了很大的优势。另外一个相关的元素是，不同的内存性能上的差异（和单位性能的成本）比不同处理器之间运算速度上的差异要小很多，所以如果设计一个刚性内存类解谜，计算时需要相当简单的算力但需要大量的内存，这就意味着，解谜成本的上升速率将会像内存成本提升速率那样，在一个相对低一些的水平。</li>
+<p>所以第一个人的最优策略是：交代，同理可证第二个人的最优策略一样是交代所以两个人都交代是最符合从个人出发的最佳策略</p>
+<p>但是如果从整体出发，两个人都交代是四个选择里面最差的，因为两个人一共要判10年，哪怕是一个人交代一个人没交代，都只需要两个人一共判10年</p>
+<h3 id="囚徒困境在管理方面有着有趣的意义"><a href="#囚徒困境在管理方面有着有趣的意义" class="headerlink" title="囚徒困境在管理方面有着有趣的意义"></a>囚徒困境在管理方面有着有趣的意义</h3><ul>
+<li>首先，囚徒困境意味着在某些情况下，合作比竞争更好。这一点看上去很明显，然而许多管理者还是觉得，公司间可以有良性竞争（这也是自由市场的生命线），那么公司内部也应当有良性竞争。20世纪一些最为传奇性的管理者高度推崇这种“竞争精神”，有意识地让员工之间和各部门之间产生对立。杰克·韦尔奇创建了分级平等制度，在这个体系里，员工发现自己所获得的评价都是相对于其他人的，这种方法在许多领导者和许多行业内大受欢迎。鼓励合作在更多的时候仅仅是贴在汽车保险杠上的标语，而不是管理者真正的作为。然而，在一个互相关联的环境里，能否有效合作关系到生死存亡。</li>
+<li>我们正在陷入一个现实版的囚徒困境。每个机构都害怕分享信息会损害本机构的利益。机构之间的竞争让它们不太愿意输出信息，它们害怕兄弟单位不会做出相应的回应。如果每个机构都能够配合，则我们会取得对我们整体而言最好的结果，但要取得这样的结果，我们首先要克服囚徒困境。</li>
 </ul>
 
         </div>
@@ -156,13 +163,9 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/2019/05/02/Prisoner-dilemma/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
-        </div>
-      
       
         <div class="nav-next">
-          <a href="/2019/04/26/polkadot/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/2019/04/27/memeory-hard-puzzles/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
