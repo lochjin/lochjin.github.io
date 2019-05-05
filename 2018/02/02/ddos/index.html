@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Jin&#39;s Blog">
+      <meta property="og:title" content="DDoS攻击">
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Jin&#39;s Blog">
   <!--Type page-->
   
-      <meta property="og:type" content="website">
+      <meta property="og:type" content="article">
   
   <!--Page Cover-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>Archives: 2019/5 - Jin&#39;s Blog</title>
+  <title>DDoS攻击 - Jin&#39;s Blog</title>
 
 
   <link rel="shortcut icon" href="/images/favicon-96x96.png">
@@ -102,149 +102,73 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">2019/5</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2019</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            DDoS攻击
             
-  <li>
-    <span class="date">
-      2019-05-02
-    </span>
-    <a href="/2019/05/02/Prisoner-dilemma/" class="title">
-      Prisoner's Dilemma
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-27
-    </span>
-    <a href="/2019/04/27/memeory-hard-puzzles/" class="title">
-      Memory-hard puzzles
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-26
-    </span>
-    <a href="/2019/04/26/polkadot/" class="title">
-      Polkadot
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-23
-    </span>
-    <a href="/2019/04/23/dns-over-https/" class="title">
-      基于HTTPS的DNS
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-04-22
-    </span>
-    <a href="/2019/04/22/conflux/" class="title">
-      Conflux共识机制介绍
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-01
-    </span>
-    <a href="/2019/03/01/snip/" class="title">
-      Mathpix Snip
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-01-02
-    </span>
-    <a href="/2019/01/02/xdag/" class="title">
-      XDAG:A new DAG-based cryptocurrency
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2018</h2>
-          <ul class="list">
+          </h1>
+          <p class="posted-on">
+          2018-02-02
+          </p>
+          <div class="tags-links">
             
-  <li>
-    <span class="date">
-      2018-07-01
-    </span>
-    <a href="/2018/07/01/caihuo/" class="title">
-      财货
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-01
-    </span>
-    <a href="/2018/06/01/selfishmining/" class="title">
-      Selfish Mining
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-02-02
-    </span>
-    <a href="/2018/02/02/ddos/" class="title">
-      DDoS攻击
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-01-24
-    </span>
-    <a href="/2018/01/24/NP/" class="title">
-      关于算法中的NP问题
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2009</h2>
-          <ul class="list">
+              
+                <a href="/tags/DDoS攻击/" rel="tag">
+                  DDoS攻击
+                </a>
+              
             
-  <li>
-    <span class="date">
-      2009-02-11
-    </span>
-    <a href="/2009/02/11/WeaponTrail/" class="title">
-      Ogre WeaponTrail
-    </a>
-  </li>
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <p>根据卡巴斯基2016Q3的调查报告，DDoS攻击造成61%的公司无法访问其关键业务信息，38%公司无法访问其关键业务，33%的受害者因此有商业合同或者合同上的损失。<br><a id="more"></a></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>DDoS的攻击原理，往简单说，其实就是利用TCP/UDP协议规律，通过占用协议栈资源或者发起大流量拥塞，达到消耗目标机器性能或者网络的目的，下面我们先简单回顾TCP“三次握手”与“四次挥手”以及UDP通信流程。</p>
+<h3 id="TCP三次握手与四次挥手"><a href="#TCP三次握手与四次挥手" class="headerlink" title="TCP三次握手与四次挥手"></a>TCP三次握手与四次挥手</h3><p><img src="/img/2018/ddos2.jpeg" alt="DDoS"></p>
+<p>TCP建立连接：三次握手</p>
+<p>1.client: syn</p>
+<p>2.server: syn+ack</p>
+<p>3.client: ack</p>
+<p>TCP断开连接：四次挥手</p>
+<p>1.client: fin</p>
+<p>2.server: ack</p>
+<p>3.server: fin</p>
+<p>4.client: ack<br><img src="/img/2018/ddos3.jpeg" alt="DDoS"><br>根据上图可发现，UDP通信是无连接、不可靠的，数据是直接传输的，并没有协商的过程。</p>
 
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+        <div class="nav-previous">
+          <a href="/2018/06/01/selfishmining/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/2018/01/24/NP/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
   </div>
 </div>
 
