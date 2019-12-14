@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 10:01:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 20:34:58 +0800</lastBuildDate>
     
 	<atom:link href="https://lochjin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Decentralized Mining Pools</title>
+      <link>https://lochjin.github.io/posts/miningpools/</link>
+      <pubDate>Thu, 12 Dec 2019 20:34:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/miningpools/</guid>
+      <description>Problem   Mining in Cryptocurrencies is Highly Centralized
+ More than 80% of mining power in Ethereum emanates from 5 mining pools. Similarly, the main 8 pools control the same fraction of mining power in Bitcoin.    Transaction Censorship and Single Point of Failure
+ Pools dictate the transaction sets in new blocks, not miners. Pools are subject to continuous DDoS attacks. If a big pool goes down, the security of the network is significantly compromised.</description>
+    </item>
     
     <item>
       <title>Oracle</title>
