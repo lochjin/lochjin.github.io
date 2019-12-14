@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3D on Jin</title>
+    <link>https://lochjin.github.io/tags/3d/</link>
+    <description>Recent content in 3D on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Wed, 11 Feb 2009 14:11:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/3d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ogre WeaponTrail</title>
+      <link>https://lochjin.github.io/posts/weapontrail/</link>
+      <pubDate>Wed, 11 Feb 2009 14:11:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/weapontrail/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2009/ogre.png&#34; alt=&#34;3d&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A better realization of knife light class, here the idea is very worthy of learning. It can also be used to achieve ribbons.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

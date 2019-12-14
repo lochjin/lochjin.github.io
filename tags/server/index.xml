@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on Jin</title>
+    <link>https://lochjin.github.io/tags/server/</link>
+    <description>Recent content in Server on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Mon, 01 Jan 2018 17:12:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>游戏服务器架构</title>
+      <link>https://lochjin.github.io/posts/game-server/</link>
+      <pubDate>Mon, 01 Jan 2018 17:12:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/game-server/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2018/game-server.jpg&#34; alt=&#34;game&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;游戏服务器架构&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

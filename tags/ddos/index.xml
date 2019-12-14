@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DDoS on Jin</title>
+    <link>https://lochjin.github.io/tags/ddos/</link>
+    <description>Recent content in DDoS on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Fri, 02 Feb 2018 10:25:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/ddos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DDoS攻击</title>
+      <link>https://lochjin.github.io/posts/ddos/</link>
+      <pubDate>Fri, 02 Feb 2018 10:25:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/ddos/</guid>
+      <description>根据卡巴斯基2016Q3的调查报告，DDoS攻击造成61%的公司无法访问其关键业务信息，38%公司无法访问其关键业务，33%的受害者因此有商业合同或者合同上的损失。
+原理 DDoS的攻击原理，往简单说，其实就是利用TCP/UDP协议规律，通过占用协议栈资源或者发起大流量拥塞，达到消耗目标机器性能或者网络的目的，下面我们先简单回顾TCP“三次握手”与“四次挥手”以及UDP通信流程。
+TCP三次握手与四次挥手 TCP建立连接：三次握手
+1.client: syn
+2.server: syn+ack
+3.client: ack
+TCP断开连接：四次挥手
+1.client: fin
+2.server: ack
+3.server: fin
+4.client: ack 根据上图可发现，UDP通信是无连接、不可靠的，数据是直接传输的，并没有协商的过程。</description>
+    </item>
+    
+  </channel>
+</rss>

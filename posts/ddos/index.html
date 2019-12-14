@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>DDoS攻击 - Jin</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="DDoS攻击" />
+<meta property="og:description" content="利用TCP/UDP协议规律，通过占用协议栈资源或者发起大流量拥塞" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lochjin.github.io/posts/ddos/" />
+<meta property="article:published_time" content="2018-02-02T10:25:58+08:00" />
+<meta property="article:modified_time" content="2018-02-02T10:25:58+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DDoS攻击"/>
+<meta name="twitter:description" content="利用TCP/UDP协议规律，通过占用协议栈资源或者发起大流量拥塞"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.iocss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.iocss/main.css" /><link rel="stylesheet" type="text/css" href="https://lochjin.github.iocss/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://lochjin.github.iojs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://lochjin.github.io">
+				<img src="/img/favicon-64x64.png" alt="Jin" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://lochjin.github.io">Jin</a></h1>
+	<div class="site-description"><p>In me the tiger sniffs the rose.</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/lochjin/lochjin.github.io/issues/new" title="Github"><i data-feather="github"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Mail"><i data-feather="inbox"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Support"><i data-feather="heart"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">02</span>
+							<span class="rest">Feb 2018</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">DDoS攻击</h1>
+				</div>
+			</div>
+
+			<div class="markdown">
+				<p><img src="/img/2018/ddos.jpeg" alt="DDoS"></p>
+<p>根据卡巴斯基2016Q3的调查报告，DDoS攻击造成61%的公司无法访问其关键业务信息，38%公司无法访问其关键业务，33%的受害者因此有商业合同或者合同上的损失。</p>
+<h3 id="heading">原理</h3>
+<p>DDoS的攻击原理，往简单说，其实就是利用TCP/UDP协议规律，通过占用协议栈资源或者发起大流量拥塞，达到消耗目标机器性能或者网络的目的，下面我们先简单回顾TCP“三次握手”与“四次挥手”以及UDP通信流程。</p>
+<h3 id="tcp">TCP三次握手与四次挥手</h3>
+<p><img src="/img/2018/ddos2.jpeg" alt="DDoS"></p>
+<p>TCP建立连接：三次握手</p>
+<p>1.client: syn</p>
+<p>2.server: syn+ack</p>
+<p>3.client: ack</p>
+<p>TCP断开连接：四次挥手</p>
+<p>1.client: fin</p>
+<p>2.server: ack</p>
+<p>3.server: fin</p>
+<p>4.client: ack
+<img src="/img/2018/ddos3.jpeg" alt="DDoS">
+根据上图可发现，UDP通信是无连接、不可靠的，数据是直接传输的，并没有协商的过程。</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddos">DDoS</a></li>
+							
+						</ul>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright |  <a href="https://github.com/lochjin">Jin</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

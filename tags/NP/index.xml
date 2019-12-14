@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NP on Jin</title>
+    <link>https://lochjin.github.io/tags/np/</link>
+    <description>Recent content in NP on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Wed, 24 Jan 2018 20:01:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/np/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于算法中的NP问题</title>
+      <link>https://lochjin.github.io/posts/np/</link>
+      <pubDate>Wed, 24 Jan 2018 20:01:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/np/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2018/np.jpeg&#34; alt=&#34;np&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;关于算法中的NP问题&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

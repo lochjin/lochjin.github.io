@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on Jin</title>
+    <link>https://lochjin.github.io/tags/oracle/</link>
+    <description>Recent content in Oracle on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Sat, 13 Jul 2019 10:01:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle</title>
+      <link>https://lochjin.github.io/posts/humanoracle/</link>
+      <pubDate>Sat, 13 Jul 2019 10:01:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/humanoracle/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/oracle.jpeg&#34; alt=&#34;oracle&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;像以太坊、EOS这样的区块链网络没有直接的途径来获取链外的信息，所以也就没有办法获取和验证触发智能合约的条件，那么我们设想的智能合约自动执行法律文件、履行商务合同、进行防伪溯源和征信验证等所有应用领域的功能可能都无法实现。这就是需要预言机的时刻了，简单地说，区块链预言机，就是一个提供外部信息的平台。预言机自身也是一种智能合约，它允许区块链连接到任何现有的API，允许使用来自区块链的传统支付网络来进行支付，并允许智能合约和其他区块链的交互。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

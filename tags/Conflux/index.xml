@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conflux on Jin</title>
+    <link>https://lochjin.github.io/tags/conflux/</link>
+    <description>Recent content in Conflux on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Mon, 22 Apr 2019 11:12:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/conflux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conflux共识机制介绍</title>
+      <link>https://lochjin.github.io/posts/conflux/</link>
+      <pubDate>Mon, 22 Apr 2019 11:12:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/conflux/</guid>
+      <description>Conflux共识机制的吞吐量能达到5.78GB/s，确认时间4.5-7.4分钟，交易速度6000TPS。Conflux共识机制的交易速度是GHOST或者Bitcoin的11.62倍，Algorand的3.84倍。
+ 本文引用原始地址  Conflux框架 Conflux共识机制是在比特币源代码基础上实现的。Conflux的框架和比特币的矿机类似：GossipNetwork实现P2P网络交互，节点维护TxPool，生成区块（Block Generator），以及维护区块状态。Conflux框架如下图： 框架图中的虚线部分是一个节点上的细节。比特币的区块链是一条链，也就是说，每个区块只有一个父区块。和比特币不同，Conflux的区块链是由“DAG State”实现，每个区块除了一个“父区块”外，可能还有多个“引用区块”。
+区块DAG Conflux中的区块之间由多条边（Edge，连接）组成，这些边分成两类：父连接，以及引用连接。在确定主链（Pivot）的基础上，新生成的区块必须使用父连接连接到主链的最后一个区块上。除了主链外，还存在其他一些非主链的路径，新生成的区块必须使用“引用连接”连接这些非主链的最后一个区块。也就是说，Conflux中的区块之间的连接关系组成DAG（有向无环图）。Conflux中组成DAG的区块会确定一条主链（Pivot Chain）。在主链确定的基础上再确定所有区块的先后顺序。区块DAG的示意图如下： Genesis是“创世纪”块，也就是第一个块。父连接用“实心”箭头表示，引用连接用“虚线”箭头表示。区块C使用“父连接”连接到A，使用“引用连接”连接到B。新生成的区块（New Block）使用“父连接”连接到H，使用“引用连接”连接到K。
+总结 Conflux共识机制，借鉴了2015年论文中的GHOST规则，使用DAG数据结构组织区块。论文逻辑清晰，比较容易阅读。Conflux共识机制，在DAG区块中，先使用GHOST规则确定主链，再确定区块顺序，交易顺序。发生冲突的交易，只保留第一个交易，其他冲突交易作废。论文论证了Conflux共识机制，保证了区块的安全性和可靠性，又能极大地提升交易吞吐量。实验数据表明：Conflux共识机制的吞吐量能达到5.78GB/s，确认时间4.5-7.4分钟，交易速度6000TPS。</description>
+    </item>
+    
+  </channel>
+</rss>

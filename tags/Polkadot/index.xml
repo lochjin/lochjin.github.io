@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Polkadot on Jin</title>
+    <link>https://lochjin.github.io/tags/polkadot/</link>
+    <description>Recent content in Polkadot on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Fri, 26 Apr 2019 08:12:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/polkadot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Polkadot</title>
+      <link>https://lochjin.github.io/posts/polkadot/</link>
+      <pubDate>Fri, 26 Apr 2019 08:12:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/polkadot/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/polkadot.jpg&#34; alt=&#34;polkadot&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Polkadot is a heterogeneous multi‑chain technology.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

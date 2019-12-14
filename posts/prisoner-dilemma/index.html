@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Prisoner&#39;s Dilemma - Jin</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Prisoner&#39;s Dilemma" />
+<meta property="og:description" content="囚徒困境是博弈论的非零和博弈中具代表性的例子，反映个人最佳选择并非团体最佳选择。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lochjin.github.io/posts/prisoner-dilemma/" />
+<meta property="article:published_time" content="2019-05-02T10:34:58+08:00" />
+<meta property="article:modified_time" content="2019-05-02T10:34:58+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Prisoner&#39;s Dilemma"/>
+<meta name="twitter:description" content="囚徒困境是博弈论的非零和博弈中具代表性的例子，反映个人最佳选择并非团体最佳选择。"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.iocss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.iocss/main.css" /><link rel="stylesheet" type="text/css" href="https://lochjin.github.iocss/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://lochjin.github.iojs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://lochjin.github.io">
+				<img src="/img/favicon-64x64.png" alt="Jin" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://lochjin.github.io">Jin</a></h1>
+	<div class="site-description"><p>In me the tiger sniffs the rose.</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/lochjin/lochjin.github.io/issues/new" title="Github"><i data-feather="github"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Mail"><i data-feather="inbox"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Support"><i data-feather="heart"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">02</span>
+							<span class="rest">May 2019</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Prisoner&#39;s Dilemma</h1>
+				</div>
+			</div>
+
+			<div class="markdown">
+				<p><img src="/img/2019/pd.jpg" alt="prisoner"></p>
+<hr>
+<p>囚徒困境是博弈论的非零和博弈中具代表性的例子，反映个人最佳选择并非团体最佳选择。</p>
+<p>所以说在一个群体中，个人做出理性选择却往往导致集体的非理性。虽然困境本身只属模型性质，但现实中的价格竞争、环境保护等方面，也会频繁出现类似情况.</p>
+<h3 id="heading">囚徒困境的例子</h3>
+<p>两个囚徒被抓了，警察为了让他们坦白交代，分别提审两个人，这里分三种情况</p>
+<ol>
+<li>两个人都不交代，没有证据，获刑1年</li>
+<li>其中一个人交代了，一个人没交代，交代了的因为戴罪立功释放，没交代的判10年</li>
+<li>两个人都交代，每个人判5年
+<img src="/img/2019/pd1.jpg" alt="Prisoner's Dilemma">
+两个人没有串供的机会，所以只能自行判断，假设每个人交代和不交代都占50%，则</li>
+</ol>
+<ul>
+<li>第一个人没说的时候判刑的危险（后果*概率）50%*1+50%*10=5.5</li>
+<li>第一个人交代了的时候判刑的危险（后果*概率）50%*0+50%*5=2.5</li>
+</ul>
+<p>所以第一个人的最优策略是：交代，同理可证第二个人的最优策略一样是交代所以两个人都交代是最符合从个人出发的最佳策略</p>
+<p>但是如果从整体出发，两个人都交代是四个选择里面最差的，因为两个人一共要判10年，哪怕是一个人交代一个人没交代，都只需要两个人一共判10年</p>
+<h3 id="heading-1">囚徒困境在管理方面有着有趣的意义</h3>
+<ul>
+<li>首先，囚徒困境意味着在某些情况下，合作比竞争更好。这一点看上去很明显，然而许多管理者还是觉得，公司间可以有良性竞争（这也是自由市场的生命线），那么公司内部也应当有良性竞争。20世纪一些最为传奇性的管理者高度推崇这种“竞争精神”，有意识地让员工之间和各部门之间产生对立。杰克·韦尔奇创建了分级平等制度，在这个体系里，员工发现自己所获得的评价都是相对于其他人的，这种方法在许多领导者和许多行业内大受欢迎。鼓励合作在更多的时候仅仅是贴在汽车保险杠上的标语，而不是管理者真正的作为。然而，在一个互相关联的环境里，能否有效合作关系到生死存亡。</li>
+<li>我们正在陷入一个现实版的囚徒困境。每个机构都害怕分享信息会损害本机构的利益。机构之间的竞争让它们不太愿意输出信息，它们害怕兄弟单位不会做出相应的回应。如果每个机构都能够配合，则我们会取得对我们整体而言最好的结果，但要取得这样的结果，我们首先要克服囚徒困境。</li>
+</ul>
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/%E5%8D%9A%E5%BC%88">博弈</a></li>
+							
+						</ul>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright |  <a href="https://github.com/lochjin">Jin</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

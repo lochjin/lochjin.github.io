@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Jin</title>
+    <link>https://lochjin.github.io/tags/algorithm/</link>
+    <description>Recent content in Algorithm on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Sat, 27 Apr 2019 09:31:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Memory-hard puzzles</title>
+      <link>https://lochjin.github.io/posts/memeory-hard-puzzles/</link>
+      <pubDate>Sat, 27 Apr 2019 09:31:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/memeory-hard-puzzles/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/mhp.jpeg&#34; alt=&#34;asic&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;刚性内存解谜（Memory-hard puzzles）需要大量的内存计算，而不是靠大量的CPU时间&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

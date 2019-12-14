@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Ogre WeaponTrail - Jin</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Ogre WeaponTrail" />
+<meta property="og:description" content="A better realization of knife light class, here the idea is very worthy of learning. It can also be used to achieve ribbons." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lochjin.github.io/posts/weapontrail/" />
+<meta property="article:published_time" content="2009-02-11T14:11:58+08:00" />
+<meta property="article:modified_time" content="2009-02-11T14:11:58+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ogre WeaponTrail"/>
+<meta name="twitter:description" content="A better realization of knife light class, here the idea is very worthy of learning. It can also be used to achieve ribbons."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.iocss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.iocss/main.css" /><link rel="stylesheet" type="text/css" href="https://lochjin.github.iocss/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://lochjin.github.iojs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://lochjin.github.io">
+				<img src="/img/favicon-64x64.png" alt="Jin" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://lochjin.github.io">Jin</a></h1>
+	<div class="site-description"><p>In me the tiger sniffs the rose.</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/lochjin/lochjin.github.io/issues/new" title="Github"><i data-feather="github"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Mail"><i data-feather="inbox"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Support"><i data-feather="heart"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">11</span>
+							<span class="rest">Feb 2009</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Ogre WeaponTrail</h1>
+				</div>
+			</div>
+
+			<div class="markdown">
+				<p><img src="/img/2009/ogre.png" alt="3d"></p>
+<hr>
+<p>A better realization of knife light class, here the idea is very worthy of learning. It can also be used to achieve ribbons.</p>
+<p>WeaponTrail.h</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#pragma once
+
+#include&lt;list&gt;
+
+#include &#34;Ogre.h&#34;
+
+using namespace Ogre;
+
+
+class WeaponTrail
+{
+public:
+ 
+ WeaponTrail(Ogre::String  name, SceneManager* s );
+ 
+ virtual ~WeaponTrail();
+
+ /// Set the weapon entity to which the trail is attached
+ void setWeaponEntity(Entity* p_WeaponEntity);
+ /// update the weapon trail
+ void onUpdate(float p_DeltaT);
+ /// Set the name of the material to use for the trail
+ void setMaterialName(const String&amp; p_MaterialName);
+ /// set the initial color of the start of segments
+ void setSegmentStartInitialColor(const Ogre::ColourValue&amp; p_Color);
+ /// get the initial color of the start of segments
+ const Ogre::ColourValue&amp; getSegmentStartInitialColor() const;
+ /// set the initial color of the end of segments
+ void setSegmentEndInitialColor(const Ogre::ColourValue&amp; p_Color);
+ /// get the initial color of the end of segments
+ const Ogre::ColourValue&amp; getSegmentEndInitialColor() const;
+ /// set how the color of the start of segments will change over time
+ void setSegmentStartColorChange(const Ogre::ColourValue&amp; p_ColorChange);
+ /// get how the color of the start of segments will change over time
+ const Ogre::ColourValue&amp; getSegmentStartColorChange() const;
+ /// set how the color of the start of segments will change over time
+ void setSegmentEndColorChange(const Ogre::ColourValue&amp; p_ColorChange);
+ /// get how the color of the start of segments will change over time
+ const Ogre::ColourValue&amp; getSegmentEndColorChange() const;
+ /// Return the max vertex count of the trail
+ inline int getMaxSegmentCount() const {return m_MaxSegmentCount;}
+ /// set the width
+ void setWidth(float p_Width) {m_Width = p_Width;}
+ /// get the width
+ float getWidth() const {return m_Width;}
+ /// Set whether new segments are added
+ void setActive(bool p_Active = true);
+ /// Get whether new segments are added
+ bool isActive() const;
+ /// Get whether there are currently segments in the list
+ bool isVisible() const;
+
+protected:
+
+ /// a trail segment
+ struct TrailSegment
+ {
+  /// start position
+  Vector3 segmentStart;
+  /// end position
+  Vector3 segmentEnd;
+  /// current segment start color
+  Ogre::ColourValue segmentStartColor;
+  /// current segment end color
+  Ogre::ColourValue segmentEndColor;
+ }; // end TrailSegment struct declaration
+
+ /// typedef for a list of trail segments
+ typedef std::list&lt;TrailSegment&gt; TrailSegmentList;
+ /// the list of currently active trail segments
+ TrailSegmentList m_SegmentList;
+
+ /// Initializes the manual object
+ void init();
+ /// Uninitializes the manual object
+ void uninit();
+
+ ManualObject* m_TrailObject;        //!&lt; the dynamically changed mesh representing the trail
+ Entity* m_WeaponEntity;             //!&lt; the entity representing the weapon;
+ Node* m_WeaponNode;                 //!&lt; the node the tracked entity is attached to
+ SceneNode* m_TrailNode;             //!&lt; the node the manual object is attached to
+ String m_MaterialName;              //!&lt; the name of the material to use
+ const int m_MaxSegmentCount;        //!&lt; the maximum number of segments the trail will consist of
+ Ogre::ColourValue m_SegmentStartInitialColor;   //!&lt; the initial color of start segments
+ Ogre::ColourValue m_SegmentEndInitialColor;     //!&lt; the initial color of end segments
+ Ogre::ColourValue m_SegmentStartColorChange;    //!&lt; how the color of start segments will change over time
+ Ogre::ColourValue m_SegmentEndColorChange;      //!&lt; how the color of end segments will change over time
+ float m_Width;                      //!&lt; the width of the trail
+ bool m_IsActive;                    //!&lt; flag indicating whether new segments are generated
+
+ SceneManager* mSceneMgr;
+ Ogre::String  mName;
+
+}; // end of WeaponTrail class declaration
+</code></pre></div><p>WeaponTrail.cpp</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#include &#34;WeaponTrail.h&#34;
+//---------------------------------------------------------------------------//
+WeaponTrail::WeaponTrail(Ogre::String  name, SceneManager* s )
+:m_TrailObject(0),
+m_MaxSegmentCount(30),
+mSceneMgr(s),
+m_IsActive(true)
+{
+ m_SegmentStartColorChange = Ogre::ColourValue(1.0,1.0,1.0,1.0);
+ m_SegmentEndColorChange = Ogre::ColourValue(1.0,1.0,1.0,1.0);
+ m_SegmentStartInitialColor = Ogre::ColourValue(0.6,0.5,0.8,1);
+ m_SegmentEndInitialColor = Ogre::ColourValue(1.0,0.2,1.0,1);
+
+ m_SegmentStartColorChange *= 3.0;
+ m_SegmentEndColorChange *= 3.0;
+
+ m_Width = 30.0;
+
+ setWeaponEntity(0);
+ init();
+}
+//---------------------------------------------------------------------------//
+WeaponTrail::~WeaponTrail()
+{
+ uninit();
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::init()
+{
+ // create object
+ m_TrailObject =
+  mSceneMgr-&gt;createManualObject(mName);
+ m_TrailObject-&gt;estimateVertexCount(m_MaxSegmentCount * 2);
+ m_TrailObject-&gt;setDynamic(true);
+
+ m_TrailObject-&gt;begin(&#34;mat_trail&#34;, Ogre::RenderOperation::OT_TRIANGLE_STRIP);
+
+ // fill the object (the actual data does not matter here)
+ for(int i=0; i&lt;m_MaxSegmentCount; ++i)
+ {
+  m_TrailObject-&gt;position(0, 0, -i*20);
+  m_TrailObject-&gt;textureCoord(0,0);
+  m_TrailObject-&gt;colour(1,0,0,1);
+  m_TrailObject-&gt;position(0, 30, -i*20);
+  m_TrailObject-&gt;textureCoord(1,0);
+  m_TrailObject-&gt;colour(1,0,0,1);
+ }
+ m_TrailObject-&gt;end();
+
+ // create node and attach object
+ m_TrailNode =
+  mSceneMgr-&gt;getRootSceneNode()-&gt;createChildSceneNode();
+ m_TrailNode-&gt;attachObject(m_TrailObject);
+ m_TrailObject-&gt;setVisible(false);
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::uninit()
+{
+ m_IsActive = false;
+
+ // detach object and remove node
+ m_TrailNode-&gt;detachObject(m_TrailObject);
+ mSceneMgr-&gt;getRootSceneNode()-&gt;
+  removeAndDestroyChild(m_TrailNode-&gt;getName());
+
+ // remove object
+ m_TrailObject-&gt;setVisible(false);
+ mSceneMgr-&gt;destroyManualObject(m_TrailObject); 
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setWeaponEntity(Entity* p_WeaponEntity)
+{
+ m_WeaponEntity = p_WeaponEntity;
+ if (m_WeaponEntity)
+ {   
+  m_WeaponNode = m_WeaponEntity-&gt;getParentNode();
+ }
+ else
+ {
+  m_WeaponNode = 0;
+ }
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::onUpdate(float p_DeltaT)
+{
+ // early out
+ if(!isActive() &amp;&amp; !isVisible())
+ {
+  return;
+ }
+ if (!m_WeaponEntity || !m_WeaponNode)
+ {
+  return;
+ }
+ if (!m_TrailObject)
+ {
+  return;
+ }
+
+ m_TrailObject-&gt;setVisible(true);
+
+ // iterate over the current segments, apply alpha change
+ for(TrailSegmentList::iterator it = m_SegmentList.begin();
+  it != m_SegmentList.end();)
+ {
+  (*it).segmentStartColor -= m_SegmentStartColorChange * p_DeltaT;
+  (*it).segmentEndColor -= m_SegmentEndColorChange * p_DeltaT;
+  (*it).segmentStartColor.saturate();
+  (*it).segmentEndColor.saturate();
+  if((*it).segmentStartColor == Ogre::ColourValue::ZERO &amp;&amp; (*it).segmentEndColor == Ogre::ColourValue::ZERO)
+  {
+   it = m_SegmentList.erase(it);
+  }
+  else
+  {
+   ++it;
+  }
+ }
+
+ // throw away the last element if the maximum number of segments is used
+ if(m_SegmentList.size() &gt;= m_MaxSegmentCount)
+ {
+  m_SegmentList.pop_back();
+ }
+
+ // only add a new segment if active
+ if(isActive())
+ {
+  // the segment to add to the trail
+  TrailSegment newSegment;
+  // initial the trail
+  newSegment.segmentStartColor = getSegmentStartInitialColor();
+  newSegment.segmentEndColor = getSegmentEndInitialColor();
+  newSegment.segmentStart  = m_WeaponNode-&gt;_getDerivedPosition();
+  Vector3 pos = m_WeaponNode-&gt;getPosition();
+  // probably quite costly way to get the second position
+  m_WeaponNode-&gt;translate(Vector3(0, m_Width, 0), SceneNode::TS_LOCAL);
+  newSegment.segmentEnd = m_WeaponNode-&gt;_getDerivedPosition();
+  m_WeaponNode-&gt;setPosition(pos);
+
+  Vector3 _verDir = newSegment.segmentEnd - newSegment.segmentStart;
+  _verDir.normalise();
+
+  newSegment.segmentEnd = newSegment.segmentStart + _verDir *  m_Width;
+
+  m_SegmentList.push_front(newSegment);
+  
+ }
+ // update the manual object
+ m_TrailObject-&gt;beginUpdate(0);
+ int segmentCount = 0;
+ for(TrailSegmentList::iterator it = m_SegmentList.begin();
+  it != m_SegmentList.end(); ++it)
+ {
+  m_TrailObject-&gt;position((*it).segmentStart);
+  m_TrailObject-&gt;textureCoord(0,0);
+  m_TrailObject-&gt;colour((*it).segmentStartColor);
+  m_TrailObject-&gt;position((*it).segmentEnd);
+  m_TrailObject-&gt;textureCoord(1,0);
+  m_TrailObject-&gt;colour((*it).segmentEndColor);
+  ++segmentCount;
+ }
+ // use the last position to render the invisible part of the trail
+ // as degenerate triangles
+ Vector3 lastPos = Vector3::ZERO;
+ if(!m_SegmentList.empty())
+ {
+  lastPos = m_SegmentList.back().segmentStart;
+ }
+ for(int i=segmentCount*2;i&lt;m_MaxSegmentCount * 2;++i)
+ {
+  m_TrailObject-&gt;position(lastPos);
+ }
+ // end the update
+ m_TrailObject-&gt;end();
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setMaterialName(const String&amp; p_MaterialName)
+{
+ m_MaterialName = p_MaterialName;
+ if(m_TrailObject)
+ {
+  m_TrailObject-&gt;setMaterialName(0, m_MaterialName);
+ }
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setSegmentStartColorChange(const Ogre::ColourValue&amp; p_ColorChange)
+{
+ m_SegmentStartColorChange = p_ColorChange;
+}
+//---------------------------------------------------------------------------//
+const Ogre::ColourValue&amp; WeaponTrail::getSegmentStartColorChange() const
+{
+ return m_SegmentStartColorChange;
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setSegmentEndColorChange(const Ogre::ColourValue&amp; p_ColorChange)
+{
+ m_SegmentEndColorChange = p_ColorChange;
+}
+//---------------------------------------------------------------------------//
+const Ogre::ColourValue&amp; WeaponTrail::getSegmentEndColorChange() const
+{
+ return m_SegmentEndColorChange;
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setSegmentStartInitialColor(const Ogre::ColourValue&amp; p_Color)
+{
+ m_SegmentStartInitialColor = p_Color;
+}
+//---------------------------------------------------------------------------//
+const Ogre::ColourValue&amp; WeaponTrail::getSegmentStartInitialColor() const
+{
+ return m_SegmentStartInitialColor;
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setSegmentEndInitialColor(const Ogre::ColourValue&amp; p_Color)
+{
+ m_SegmentEndInitialColor = p_Color;
+}
+//---------------------------------------------------------------------------//
+const Ogre::ColourValue&amp; WeaponTrail::getSegmentEndInitialColor() const
+{
+ return m_SegmentEndInitialColor;
+}
+//---------------------------------------------------------------------------//
+void WeaponTrail::setActive(bool p_Active)
+{
+ m_IsActive = p_Active;
+}
+//---------------------------------------------------------------------------//
+bool WeaponTrail::isActive() const
+{
+ return m_IsActive;
+}
+//---------------------------------------------------------------------------//
+bool WeaponTrail::isVisible() const
+{
+ return !m_SegmentList.empty();
+}
+//---------------------------------------------------------------------------//
+</code></pre></div>
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/3d">3D</a></li>
+							
+						</ul>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright |  <a href="https://github.com/lochjin">Jin</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

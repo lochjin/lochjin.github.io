@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Jin</title>
+    <link>https://lochjin.github.io/posts/</link>
+    <description>Recent content in Posts on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Sat, 13 Jul 2019 10:01:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle</title>
+      <link>https://lochjin.github.io/posts/humanoracle/</link>
+      <pubDate>Sat, 13 Jul 2019 10:01:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/humanoracle/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/oracle.jpeg&#34; alt=&#34;oracle&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;像以太坊、EOS这样的区块链网络没有直接的途径来获取链外的信息，所以也就没有办法获取和验证触发智能合约的条件，那么我们设想的智能合约自动执行法律文件、履行商务合同、进行防伪溯源和征信验证等所有应用领域的功能可能都无法实现。这就是需要预言机的时刻了，简单地说，区块链预言机，就是一个提供外部信息的平台。预言机自身也是一种智能合约，它允许区块链连接到任何现有的API，允许使用来自区块链的传统支付网络来进行支付，并允许智能合约和其他区块链的交互。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prisoner&#39;s Dilemma</title>
+      <link>https://lochjin.github.io/posts/prisoner-dilemma/</link>
+      <pubDate>Thu, 02 May 2019 10:34:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/prisoner-dilemma/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/pd.jpg&#34; alt=&#34;prisoner&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;囚徒困境是博弈论的非零和博弈中具代表性的例子，反映个人最佳选择并非团体最佳选择。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Memory-hard puzzles</title>
+      <link>https://lochjin.github.io/posts/memeory-hard-puzzles/</link>
+      <pubDate>Sat, 27 Apr 2019 09:31:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/memeory-hard-puzzles/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/mhp.jpeg&#34; alt=&#34;asic&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;刚性内存解谜（Memory-hard puzzles）需要大量的内存计算，而不是靠大量的CPU时间&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Polkadot</title>
+      <link>https://lochjin.github.io/posts/polkadot/</link>
+      <pubDate>Fri, 26 Apr 2019 08:12:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/polkadot/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/polkadot.jpg&#34; alt=&#34;polkadot&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Polkadot is a heterogeneous multi‑chain technology.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>基于HTTPS的DNS</title>
+      <link>https://lochjin.github.io/posts/dns-over-https/</link>
+      <pubDate>Tue, 23 Apr 2019 14:01:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/dns-over-https/</guid>
+      <description>Mozilla和Cloudflare合作提供的一项新的 IETF 标准方案可信递归解析器，一种新的解决 DNS 安全的方案
+最近用了下Firefox浏览器的这个功能，感觉还蛮强大的。同时也发现个诡异的问题，使用VPN的时候只有开启这个功能的时候才可以访问google。
+什么是 HTTP？ 当我们解释浏览器如何下载网页时，通常会这样解释：浏览器向服务器发出 GET 请求。服务器发送一个响应，该响应是一个包含 HTML 的文件。这个系统被称为 HTTP。 什么是 DNS？ 域名系统（DNS）就是将站点名称转换为 IP 地址的系统，而将域名转换为 IP 地址的过程，称为域名解析。 DNS 如何被利用？ 通常解析器会告诉每个 DNS 服务器你正在寻找哪个域名。 该请求有时会包含你的完整 IP 地址。 或者，如果不是完整的 IP 地址，请求中通常会包含你的大部分 IP 地址，这些 IP 地址可以轻松地与其他信息结合起来以找出你的身份。这意味着进行域名解析的每台服务器都会查看你要查找的网站。 但更重要的是，这也意味着通往这些服务器的任何人都可以看到你的请求。这个系统有几种方式会使用户的数据处于危险之中。 两大主要的风险是跟踪和欺骗攻击。
+  跟踪     欺骗   Cloudflare与Mozilla致力于构建隐私优先的 DNS 服务。合作建立了一个 DoH 解决方案服务。</description>
+    </item>
+    
+    <item>
+      <title>Conflux共识机制介绍</title>
+      <link>https://lochjin.github.io/posts/conflux/</link>
+      <pubDate>Mon, 22 Apr 2019 11:12:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/conflux/</guid>
+      <description>Conflux共识机制的吞吐量能达到5.78GB/s，确认时间4.5-7.4分钟，交易速度6000TPS。Conflux共识机制的交易速度是GHOST或者Bitcoin的11.62倍，Algorand的3.84倍。
+ 本文引用原始地址  Conflux框架 Conflux共识机制是在比特币源代码基础上实现的。Conflux的框架和比特币的矿机类似：GossipNetwork实现P2P网络交互，节点维护TxPool，生成区块（Block Generator），以及维护区块状态。Conflux框架如下图： 框架图中的虚线部分是一个节点上的细节。比特币的区块链是一条链，也就是说，每个区块只有一个父区块。和比特币不同，Conflux的区块链是由“DAG State”实现，每个区块除了一个“父区块”外，可能还有多个“引用区块”。
+区块DAG Conflux中的区块之间由多条边（Edge，连接）组成，这些边分成两类：父连接，以及引用连接。在确定主链（Pivot）的基础上，新生成的区块必须使用父连接连接到主链的最后一个区块上。除了主链外，还存在其他一些非主链的路径，新生成的区块必须使用“引用连接”连接这些非主链的最后一个区块。也就是说，Conflux中的区块之间的连接关系组成DAG（有向无环图）。Conflux中组成DAG的区块会确定一条主链（Pivot Chain）。在主链确定的基础上再确定所有区块的先后顺序。区块DAG的示意图如下： Genesis是“创世纪”块，也就是第一个块。父连接用“实心”箭头表示，引用连接用“虚线”箭头表示。区块C使用“父连接”连接到A，使用“引用连接”连接到B。新生成的区块（New Block）使用“父连接”连接到H，使用“引用连接”连接到K。
+总结 Conflux共识机制，借鉴了2015年论文中的GHOST规则，使用DAG数据结构组织区块。论文逻辑清晰，比较容易阅读。Conflux共识机制，在DAG区块中，先使用GHOST规则确定主链，再确定区块顺序，交易顺序。发生冲突的交易，只保留第一个交易，其他冲突交易作废。论文论证了Conflux共识机制，保证了区块的安全性和可靠性，又能极大地提升交易吞吐量。实验数据表明：Conflux共识机制的吞吐量能达到5.78GB/s，确认时间4.5-7.4分钟，交易速度6000TPS。</description>
+    </item>
+    
+    <item>
+      <title>Mathpix Snip</title>
+      <link>https://lochjin.github.io/posts/snip/</link>
+      <pubDate>Fri, 01 Mar 2019 09:31:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/snip/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/snip.jpg&#34; alt=&#34;snip&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;convert-images-to-latex&#34;&gt;Convert images to LaTeX&lt;/h2&gt;
+&lt;p&gt;Take a screenshot of math and paste the LaTeX into your editor, all with a single keyboard shortcut.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XDAG:A new DAG-based cryptocurrency</title>
+      <link>https://lochjin.github.io/posts/xdag/</link>
+      <pubDate>Wed, 02 Jan 2019 10:01:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/xdag/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2019/xdag.jpg&#34; alt=&#34;dag&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;XDAG is a novel application of Directed Acyclic Graph(DAG) technology that solves the issues currently facing blockchain technology.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>财货</title>
+      <link>https://lochjin.github.io/posts/caihuo/</link>
+      <pubDate>Sun, 01 Jul 2018 10:34:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/caihuo/</guid>
+      <description>在1871年发表的《国民经济学原理》中，门格尔把财货称为“Goods”，就是“善”，或叫商品，不同于斯密的Wealth——这里的Goods是非价值形态的实物。
+在讨论财货时，我们先去掉价格因素，只讨论它的物理形态，然后讨论价值形态。门格尔在第一章“财货的一般理论”里，把Goods定义为“有用的物品”，有用物品需要满足下面四项原则或性质，缺一不可，这四项性质联合定义了门格尔意义上的实物形态的财货。
+ 一物要成为财货，需要满足的第一个前提是，它对应着我们的某些欲望。 第二个要素是这个事物虽然对应着我们的某些欲望，如果不存在客观的因果关系链，让它能够满足我们的欲望，那就 不能构成门格尔意义上的财货，这也很直观。 第三个要素是最重要的，这是奥地利学派不同于芝加哥学派的出发点， 从奥地利学派的创始人开始，就侧重于经济学的认识论。即，我们要认识到客观存在的因果关系。如果我们没有认识到虾能够提供蛋白质，能满足你的某种生存欲望，那就不会吃虾，就如同非洲的某些原始部落那样。 第四个要素是此物可支配，这也符合我们的直观。月亮或火星上的土地，对于现在的我们来说不能算作财货，因为我们无法对它行使支配权。这四个要素联合起来，构成了财货的基本条件。  </description>
+    </item>
+    
+    <item>
+      <title>Selfish Mining</title>
+      <link>https://lochjin.github.io/posts/selfishmining/</link>
+      <pubDate>Fri, 01 Jun 2018 13:31:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/selfishmining/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2018/selfishmining.jpg&#34; alt=&#34;mining&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;自私挖矿攻击是一种针对比特币挖矿与激励机制的攻击方式，它的目的不是破坏比特币的运行机制，而是获取额外的奖励，并让诚实矿工进行无效计算。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DDoS攻击</title>
+      <link>https://lochjin.github.io/posts/ddos/</link>
+      <pubDate>Fri, 02 Feb 2018 10:25:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/ddos/</guid>
+      <description>根据卡巴斯基2016Q3的调查报告，DDoS攻击造成61%的公司无法访问其关键业务信息，38%公司无法访问其关键业务，33%的受害者因此有商业合同或者合同上的损失。
+原理 DDoS的攻击原理，往简单说，其实就是利用TCP/UDP协议规律，通过占用协议栈资源或者发起大流量拥塞，达到消耗目标机器性能或者网络的目的，下面我们先简单回顾TCP“三次握手”与“四次挥手”以及UDP通信流程。
+TCP三次握手与四次挥手 TCP建立连接：三次握手
+1.client: syn
+2.server: syn+ack
+3.client: ack
+TCP断开连接：四次挥手
+1.client: fin
+2.server: ack
+3.server: fin
+4.client: ack 根据上图可发现，UDP通信是无连接、不可靠的，数据是直接传输的，并没有协商的过程。</description>
+    </item>
+    
+    <item>
+      <title>关于算法中的NP问题</title>
+      <link>https://lochjin.github.io/posts/np/</link>
+      <pubDate>Wed, 24 Jan 2018 20:01:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/np/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2018/np.jpeg&#34; alt=&#34;np&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;关于算法中的NP问题&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>游戏服务器架构</title>
+      <link>https://lochjin.github.io/posts/game-server/</link>
+      <pubDate>Mon, 01 Jan 2018 17:12:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/game-server/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2018/game-server.jpg&#34; alt=&#34;game&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;游戏服务器架构&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ogre WeaponTrail</title>
+      <link>https://lochjin.github.io/posts/weapontrail/</link>
+      <pubDate>Wed, 11 Feb 2009 14:11:58 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/weapontrail/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://lochjin.github.io/img/2009/ogre.png&#34; alt=&#34;3d&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A better realization of knife light class, here the idea is very worthy of learning. It can also be used to achieve ribbons.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
