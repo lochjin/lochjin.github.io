@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>比特币之Bloom过滤器 - Jin</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="比特币之Bloom过滤器" />
+<meta property="og:description" content="Bloom过滤器是一个允许用户描述特定的关键词组合而不必精确表述的基于概率的过滤方法。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lochjin.github.io/posts/bloom/" />
+<meta property="article:published_time" content="2018-03-02T10:01:58+08:00" />
+<meta property="article:modified_time" content="2018-03-02T10:01:58+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="比特币之Bloom过滤器"/>
+<meta name="twitter:description" content="Bloom过滤器是一个允许用户描述特定的关键词组合而不必精确表述的基于概率的过滤方法。"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://lochjin.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://lochjin.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://lochjin.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://lochjin.github.io/">
+				<img src="/img/favicon-64x64.png" alt="Jin" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://lochjin.github.io/">Jin</a></h1>
+	<div class="site-description"><p>In me the tiger sniffs the rose.</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/lochjin/lochjin.github.io/issues/new" title="Github"><i data-feather="github"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Mail"><i data-feather="inbox"></i></a></li><li><a href="mailto:lochjin@gmail.com" title="Support"><i data-feather="heart"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">02</span>
+							<span class="rest">Mar 2018</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">比特币之Bloom过滤器</h1>
+				</div>
+			</div>
+
+			<div class="markdown">
+				<h2 id="heading">简介</h2>
+<p>Bloom过滤器是一个允许用户描述特定的关键词组合而不必精确表述的基于概率的过滤方法。它能让用户在有效搜 索关键词的同时保护他们的隐私。在SPV节点里，这一方法被用来向对等节点发送交易信息查询请求，同时交易地址不会被暴露。</p>
+<p>其实通俗的理解，就是说比如你现在正在上海旅游，正好你不知道怎么去“南京路步行街”。如果你直接向迎面而来的陌生人说“请问南京路步行街在哪里”，这样岂不是一下子就暴露了你想要去的目的地，岂不是毫无隐私而言。所以如果是换成Bloom过滤器的话，就会是这样：附近带“京”字的马路是什么，然后你会得到一些结果，可能里面会有很多你不想要的，没有关系，你可以再次询问附近的”步行街“有哪些，最后一步步得到你要的结果。这种方式虽然是拐着弯在询问，但是很好的保护了用户的隐私。</p>
+<p>Bloom过滤器可以让SPV节点指定交易的搜索模式，该搜索模式可以基于准确性或私密性的考虑被调节。一个非常具体的Bloom过滤器会生成更准确的结果，但也会显示该用户钱包里的使用的地址;反之，如果过滤器只包含简单的关键词，更多相应的交易会被搜索出来，在包含若干无关交易的同时有着更高的私密性。</p>
+<h2 id="heading-1">工作原理</h2>
+<p>Bloom过滤器的实现是由一个可变长度(N)的二进制数组(N位二进制数构成一个位域)和数量可变(M)的一组哈希函数组成。这些哈希函数的输出值始终在1和N之间，该数值与二进制数组相对应。并且该函数为确定性函数，也就是说任何一个使用相同Bloom过滤器的节点通过该函数都能对特定输入得到同一个的结果。Bloom过滤器的准确性和私密性能通过改变长度(N)和哈希函数的数量(M)来调节。 在下图中，我们用一个小型的十六位数组和三个哈希函数来演示Bloom过滤器的应用原理。</p>
+<p><img src="/img/2018/bloom1.jpg" alt="bloom"></p>
+<p>Bloom过滤器数组里的每一个数的初始值为零。关键词被加到Bloom过滤器中之前，会依次通过每一个哈希函数运算一次。该输入经第一个哈希函数运算后得到了一个在1和N之间的数，它在该数组(编号依次为1至N)中所对应 的位被置 为1，从而把哈希函数的输出记录下来。接着再进行下一个哈希函数的运算，把另外一位置为1;以此类 推。当全部M个 哈希函数都运算过之后，一共有M个位的值从0变成了1，这个关键词也被“记录”在了Bloom过滤器里。 下图显示了向Bloom过滤器添加关键词“A”。</p>
+<p><img src="/img/2018/bloom2.png" alt="bloom"></p>
+<p>增加第二个关键是就是简单地重复之前的步骤。关键词依次通过各哈希函数运算之后，相应的位变为1，Bloom过滤器则记录下该关键词。需要注意的是，当Bloom过滤器里的关键词增加时，它对应的某个哈希函数的输出值的位可能已经是1了，这种情况下，该位不会再次改变。也就是说，随着更多的关键词指向了重复的位，Bloom过滤器随着位1的增加而饱和，准确性也因此降低了。该过滤器之所以是基于概率的数据结构，就是因为关键词的增加会导致准确性的降低。 准确性取决于关键字的数量以及数组大小(N)和哈希函数的多少(M)。更大的数组和更多的哈希函数会记录更多的关键词以提高准确性。而小的数组及有限的哈希函数只能记录有限的关键词从而降低准 确性。 下图显示了向该简易Bloom过滤器里增加第二个关键词“B”。</p>
+<p><img src="/img/2018/bloom3.png" alt="bloom"></p>
+<p>为测试某一关键词是否被记录在某个Bloom过滤器中，我们将该关键词逐一代入各哈希函数中运算，并将所得的结果与原数组进行对比。如果所有的结果对应的位都变为了1，则表示这个关键词有可能已被该过滤器记录。之所以这一结论并不确定，是因为这些字节1也有可能是其他关键词运算的重叠结果。简单来说，Bloom过滤器正匹配代表着“可能是”。下图是一个验证关键词“X”是否在前述Bloom过滤器中的图例。相应的比特位都被置为1，所以这个关键词很有可能是匹配的。</p>
+<p><img src="/img/2018/bloom4.png" alt="bloom"></p>
+<p>另一方面，如果我们代入关键词计算后的结果某位为0，说明该关键词并没有被记录在过滤器里。负匹配的结果不是可能，而是一定。也就是说，负匹配代表着“一定不是”。下图是一个验证关键词“Y”是否存在于简易Bloom过滤器中的图例。图中某个结果字段为0，该字段一定没有被匹配。</p>
+<p><img src="/img/2018/bloom5.png" alt="bloom"></p>
+<p>这种保护隐私的方法可以在很多场景中得到应用。</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/bitcoin">Bitcoin</a></li>
+							
+							<li><a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81">比特币</a></li>
+							
+							<li><a href="/tags/bloom">Bloom</a></li>
+							
+						</ul>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright |  <a href="https://github.com/lochjin">Jin</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
