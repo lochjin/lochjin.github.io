@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Jin</title>
+    <link>https://lochjin.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Jin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright</copyright>
+    <lastBuildDate>Sun, 21 Nov 2010 10:31:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://lochjin.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GDI&#43; double buffer 绘图</title>
+      <link>https://lochjin.github.io/posts/gdi&#43;doublebuffer/</link>
+      <pubDate>Sun, 21 Nov 2010 10:31:40 +0800</pubDate>
+      
+      <guid>https://lochjin.github.io/posts/gdi&#43;doublebuffer/</guid>
+      <description>问题 我在使用GDI+绘制控件的时候，如果频繁的刷新会很容易出现闪烁的问题，这是由于每一次画布的提交，都会造成窗口的刷新。
+解决思路 于是我想能不能把多次提交暂存在一张虚拟的画布中，最后统一提交给窗口。
+1. 首先在自己的频繁刷新的函数中创建一张后台画布： CClientDC dc(this); Graphics graphics(dc.GetSafeHdc()); CRect rect; GetClientRect(&amp;amp;rect); Bitmap bmp(rect.Width(),rect.Height()); m_pGraph=Graphics::FromImage(&amp;amp;bmp); 2. 然后将所有需要绘制到屏幕中的图片，文字等等会绘制到这张虚拟的画布中： DrawImageToBuffer(_T(&amp;#34;bg.jpg&amp;#34;),0,0,600,400); DrawTextToBuffer(_T(&amp;#34;bg1.jpg&amp;#34;),300,0,_T(&amp;#34;测试文字&amp;#34;),(int)wcslen(_T(&amp;#34;测试文字&amp;#34;)),12); float currTime = (float)timeGetTime(); float timeDelta = (currTime - lastTime)*0.001f; totalTime+=timeDelta; fcount+=1.0f; TCHAR textTemp[30]; wsprintf(textTemp,_T(&amp;#34;fps:%d/s\n&amp;#34;),(int)(fcount/totalTime)); DrawTextToBuffer(_T(&amp;#34;bg2.jpeg&amp;#34;),300,30,textTemp,(int)wcslen(textTemp),30); 3. 最后提交我们的画布到前台窗口中去： graphics.DrawImage(&amp;amp;bmp,rect.left,rect.top,rect.right,rect.bottom); m_pGraph=NULL; 4. OK，结束。按照这种方式，现在就不会再闪烁了。 注意：DrawImageToBuffer 和 DrawTextToBuffer 是我对GDI+封装的函数，完整代码如下：
+// GDI+DoubleBufferDlg.cpp : 实现文件 // #include &amp;#34;stdafx.h&amp;#34; #include &amp;#34;GDI+DoubleBuffer.h&amp;#34; #include &amp;#34;GDI+DoubleBufferDlg.h&amp;#34; #include &amp;lt;ctime&amp;gt; #include&amp;lt;windows.h&amp;gt; #include &amp;lt;MMSystem.h&amp;gt; #pragma comment(lib,&amp;#34;Winmm.lib&amp;#34;) #ifdef _DEBUG #define new DEBUG_NEW #endif // 用于应用程序“关于”菜单项的 CAboutDlg 对话框 static float lastTime=0; static float totalTime=0; static float fcount=0; class CAboutDlg : public CDialog { public: CAboutDlg(); // 对话框数据 enum { IDD = IDD_ABOUTBOX }; protected: virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV 支持 // 实现 protected: DECLARE_MESSAGE_MAP() }; CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD) { } void CAboutDlg::DoDataExchange(CDataExchange* pDX) { CDialog::DoDataExchange(pDX); } BEGIN_MESSAGE_MAP(CAboutDlg, CDialog) END_MESSAGE_MAP() // CGDIDoubleBufferDlg 对话框 CGDIDoubleBufferDlg::CGDIDoubleBufferDlg(CWnd* pParent /*=NULL*/) : CDialog(CGDIDoubleBufferDlg::IDD, pParent) { m_hIcon = AfxGetApp()-&amp;gt;LoadIcon(IDR_MAINFRAME); } void CGDIDoubleBufferDlg::DoDataExchange(CDataExchange* pDX) { CDialog::DoDataExchange(pDX); } BEGIN_MESSAGE_MAP(CGDIDoubleBufferDlg, CDialog) ON_WM_SYSCOMMAND() ON_WM_PAINT() ON_WM_QUERYDRAGICON() //}}AFX_MSG_MAP ON_WM_TIMER() END_MESSAGE_MAP() // CGDIDoubleBufferDlg 消息处理程序 BOOL CGDIDoubleBufferDlg::OnInitDialog() { CDialog::OnInitDialog(); // 将“关于.</description>
+    </item>
+    
+  </channel>
+</rss>
