@@ -3,27 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lochjin.github.io/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lochjin.github.io/posts/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lochjin.github.io/tags/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lochjin.github.io/posts/zeroknowledgeproof/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lochjin.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lochjin.github.io/tags/%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lochjin.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9A%90%E7%A7%81/</loc>
+    <lastmod>2020-01-21T08:21:30+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lochjin.github.io/posts/miningpools/</loc>
     <lastmod>2019-12-12T20:34:58+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://lochjin.github.io/</loc>
-    <lastmod>2019-12-12T20:34:58+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://lochjin.github.io/tags/mining-pools/</loc>
-    <lastmod>2019-12-12T20:34:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://lochjin.github.io/posts/</loc>
-    <lastmod>2019-12-12T20:34:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://lochjin.github.io/tags/</loc>
     <lastmod>2019-12-12T20:34:58+08:00</lastmod>
   </url>
   
